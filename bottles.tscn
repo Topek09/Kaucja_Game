@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cry4klj47c660"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_esesb"]
+
+[node name="Bottles" type="Node3D" unique_id=1184826792]
+
+[node name="Butelka" type="StaticBody3D" parent="." unique_id=1252393465]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Butelka" unique_id=206597027]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2, 0)
+mesh = SubResource("CylinderMesh_esesb")

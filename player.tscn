@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dmcm63h123mp7"]
+
+[ext_resource type="Script" uid="uid://ctkfb50ry3og8" path="res://Kaucja_Game/Scripts/Player_movement/player.gd" id="1_uldwm"]
+
+[sub_resource type="GDScript" id="GDScript_wm5r5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4hqm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fcsby"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uldwm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uldwm"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_uldwm"]
+
+[node name="Player" type="Node3D" unique_id=427538705]
+script = SubResource("GDScript_wm5r5")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=251432912]
+script = ExtResource("1_uldwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=763622558]
+shape = SubResource("CapsuleShape3D_s4hqm")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=371539865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=59607809]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=35185480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_fcsby")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=393688109]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 5, 0)
+mesh = SubResource("SphereMesh_uldwm")
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1075078738]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1290410487]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_uldwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1259247911]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_uldwm")
+debug_color = Color(0.713908, 0.3678728, 0.80384415, 0.41960785)
