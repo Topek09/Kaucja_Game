@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cucj5gr0we66w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ff2gn"]
+
+[node name="Dumpster" type="CollisionShape3D" unique_id=1559480086]
+shape = SubResource("BoxShape3D_ff2gn")
